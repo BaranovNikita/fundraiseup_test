@@ -1,0 +1,32 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/api/src",
+  "monorepo": true,
+  "root": "apps/api",
+  "compilerOptions": {
+    "webpack": false,
+    "tsConfigPath": "apps/api/tsconfig.app.json"
+  },
+  "projects": {
+    "api": {
+      "type": "application",
+      "root": "apps/api",
+      "entryFile": "main",
+      "sourceRoot": "apps/api/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/api/tsconfig.app.json"
+      }
+    },
+    "frontend": {
+      "type": "application",
+      "root": "apps/frontend",
+      "entryFile": "main",
+      "sourceRoot": "apps/frontend/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/frontend/tsconfig.app.json",
+        "assets": ["**/*.hbs"],
+        "watchAssets": true
+      }
+    }
+  }
+}
